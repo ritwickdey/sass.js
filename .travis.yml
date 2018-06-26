@@ -3,9 +3,7 @@ language: node_js
 node_js: "8.9.4"
 
 dist: trusty
-sudo: required
-services:
-  - docker
+sudo: false
 
 git:
   depth: 20
@@ -19,7 +17,7 @@ cache:
 
 before_install:
     - brew update
-    - brew install emscripten || ./.emscripten-install.sh || true
+    - ./.emscripten-install.sh
 
 install:
   - npm install
