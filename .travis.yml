@@ -15,14 +15,15 @@ os: osx
 cache:
   directories:
     - node_modules
+    - $HOME/Library/Caches/Homebrew
 
 before_install:
     - brew update
     - brew install cmake
+    - brew install emscripten
 
 install:
   - npm install
-  - ./.emscripten-install.sh
 
 build:
   - npm run build
