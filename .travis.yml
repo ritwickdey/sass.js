@@ -18,8 +18,7 @@ cache:
 
 before_install:
     - brew update
-    - brew install qt5 cmake
-    - brew link --force qt
+    - brew install cmake
 
 install:
   - npm install
