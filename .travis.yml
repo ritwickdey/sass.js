@@ -8,7 +8,7 @@ services:
   - docker
 
 git:
-  depth: 1
+  depth: 20
 
 os: osx
 
