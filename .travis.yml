@@ -15,13 +15,15 @@ os: osx
 cache:
   directories:
     - node_modules
-  yarn: true
 
 before_install:
-  - docker run -dit --name emscripten -v $(pwd):/src trzeci/emscripten:sdk-incoming-64bit bash
+    - brew update
+    - brew install qt5 cmake
+    - brew link --force qt
 
 install:
   - npm install
+  - ./.emscripten-install.sh
 
 build:
   - npm run build
