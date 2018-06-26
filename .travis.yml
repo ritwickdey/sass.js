@@ -1,0 +1,33 @@
+language: node_js
+
+node_js: "8.9.4"
+
+services:
+  - docker
+
+git:
+  depth: 1
+
+os: osx
+
+
+cache:
+  directories:
+    - node_modules
+  yarn: true
+
+before_install:
+  - docker run -dit --name emscripten -v $(pwd):/src trzeci/emscripten:sdk-incoming-64bit bash
+
+install:
+  - npm install
+
+build:
+  - npm run build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $gh_token
+  local_dir: dist
+  target-branch: dist
