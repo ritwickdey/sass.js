@@ -24,8 +24,10 @@ before_install:
 install:
   - npm install
 
-build:
+script:
+  - emcc --version
   - npm run build
+  - npm test
 
 deploy:
   provider: pages
