@@ -19,7 +19,6 @@ cache:
 
 before_install:
     - brew update
-    - brew install cmake
     - brew install emscripten
 
 install:
