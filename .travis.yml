@@ -19,7 +19,7 @@ cache:
 
 before_install:
     - brew update
-    - brew install emscripten || true
+    - brew install emscripten || ./.emscripten-install.sh || true
 
 install:
   - npm install
